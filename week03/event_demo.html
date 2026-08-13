@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang ="th">
+<body>
+    <h2 id="hoverMe">ลองชี้ดู</h2>
+    <input type="text" id="liveInput" placeholder="พิมพ์ข้อความที่นี่">
+    <p id="counter">จำนวนตัวอักษร : 0</p>
+    <script>
+        const h = document.getElementById("hoverMe");
+        h.addEventListener("mouseover", ()=> h.style.color = "red");
+        h.addEventListener("mouseout", ()=> h.style.color = "black");
+
+        const box = document.getElementById("liveInput");
+        const counter = document.getElementById("counter");
+        box.addEventListener("input", (e)=>{
+            counter.textContent = `${e.target.value.length} ตัวอักษร`;
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+        console.log("DOM พร้อมใช้งานแล้ว!");
+        });
+    </script>
+</html>
